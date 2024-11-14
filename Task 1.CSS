@@ -1,0 +1,396 @@
+/* Get fonts from Google for the page */
+@import url('https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+/* No space around the body, set default font size */
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 1em; 
+    font-family: "Josefin Sans", serif; /* This is the font for body text */
+    background-color: #E9E9E9
+}
+
+/* Header stuff: Center the logo and links */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px;
+}
+
+/* Logo: Make it 200px wide and stick it to the top */
+.logo {
+    width: 200px; 
+    margin-bottom: auto; /* Keeps logo up top */
+}
+
+/* Nav bar: Spread out links across the page */
+.nav {
+    display: flex;
+    list-style: none;
+    width: 100%;
+    justify-content: space-evenly;
+    padding: 0;
+    margin: 0;
+}
+
+/* Nav links: Remove underlines and add hover effect */
+.nav a {
+    text-decoration: none; 
+    color: inherit; 
+    padding: 8px;
+}
+
+.nav a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+/* Title in the container: Use special font and center it */
+.container h1 {
+    font-family: "Protest Guerrilla", sans-serif;
+    text-align: center;
+    font-size: 2rem;
+    margin: 12px 0;
+}
+
+.container p {
+    padding: 0 30px;  
+    text-align: justify;
+}
+
+.albums {
+    width: 100vw;
+    display: grid;
+}
+
+.featured {
+    display: none; /* Featured-Album is hidden */
+}
+
+img {
+    width: 100%; /* Makes images stretch to full width */
+    height: auto;
+}
+
+/* About section: Center everything and make the author’s image round */
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.author-img {
+    width: 200px;
+    height: 200px;
+    margin-top: 12px;
+}
+
+.author-img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%; /* Rounds the image */
+}
+
+footer {
+    padding: 5px; 
+    background-color: #14181d;
+    color: #fff;
+    font-size: 14px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+footer p {
+    padding: 0;
+    margin: 0; 
+}
+
+/* Large Mobile: 540px - 720px */
+@media (min-width: 540px) and (max-width: 720px) {
+
+    .container {
+        p {
+            padding: 20px; /* Add space around the text in paragraphs */
+        }
+    }
+
+    h1 {
+        font-family: "Protest Guerrilla", sans-serif;
+        text-align: center;
+        font-size: 2rem;
+        margin: 20px 0; /* Add space above and below the heading */
+    }
+
+    .about {
+        .author-img {
+            margin-top: 20px; /* Add space on top of the author image */
+        }
+
+        .about-container {
+            p {
+                padding: 0 20px; 
+                text-align: justify;
+            }
+        }
+    }
+
+    footer {
+        padding: 10px; 
+    }
+}
+
+/* Tablet: 720px - 1024px */
+@media (min-width: 721px) and (max-width: 1024px) {
+
+    main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; /* Center content in the middle */
+    }
+
+    .container {
+        width: 80%;
+        border: solid black 1.5px; /* Add a thin border around the container */
+        p {
+            padding: 0 30px; /* Add space around paragraphs */
+        }
+    }
+
+    h1 {
+        font-family: "Protest Guerrilla", sans-serif;
+        text-align: center;
+        font-size: 2rem;
+        margin: 30px 0; /* Add space around the title */
+    }
+
+    .albums {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Two columns for the album images */
+        grid-template-rows: 1fr 1fr; /* Two rows for the album images */
+
+        img {
+            width: 100%; /* Make images stretch to full width */
+            height: auto; /* Keep aspect ratio */
+        }
+    }
+
+    .about {
+        display: flex;
+        flex-direction: row-reverse; /* Author info goes to the right */
+        align-items: end;
+        justify-content: center;
+        margin: 30px;
+    }
+
+    .author-img {
+        margin: 0;
+        width: 200px;
+        height: 200px;
+        img {
+            width: 100%;
+            height: 100%;
+            border-radius: 100%; /* Make the image round */
+        }
+    }
+
+    .about-container {
+        width: 50vw;
+        margin: 30px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        h1 {
+            margin: 0;
+            padding: 0; 
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+            padding: 0 30px; 
+            text-align: justify;
+        }
+    }
+
+    footer {
+        padding: 15px; /* Add more space around footer */
+    }
+}
+/* Desktop: 1024px and up */
+@media (min-width: 1025px) {
+
+    body {
+        font-size: 1.5em; /* Bigger text for bigger screens, duh */
+    }
+
+    #featured-album {
+        grid-area: featured-album; /* Featured album stays in its spot */
+    }
+
+    /* Move each album to its grid place */
+    .album-cover:nth-of-type(1) {
+        grid-area: album2; /* First one goes in the second slot */
+    }
+
+    .album-cover:nth-of-type(2) {
+        grid-area: album3; /* Second one in the third slot */
+    }
+
+    .album-cover:nth-of-type(3) {
+        grid-area: album4; /* Third one in the fourth slot */
+    }
+
+    .album-cover:nth-of-type(4) {
+        grid-area: album5; /* Fourth one in the fifth slot */
+    }
+
+    /* Main content becomes a flexbox, everything centered */
+    main {
+        display: flex;
+        flex-direction: column; /* Stack stuff vertically */
+        justify-content: center; /* Center stuff vertically */
+        align-items: center; /* Center stuff horizontally */
+    }
+
+    header {
+        .logo { 
+            width: 200px;
+            height: 200px;
+            margin: 50px 0; /* Big space above and below the logo */
+            margin-bottom: 5%; /* Extra space below, cause why not */
+        }
+
+        .nav {
+            font-size: 1em;
+            margin-bottom: 50px; /* More space under the nav */
+        }
+    }
+
+    .container {
+        width: 80%; /* Takes up 80% of the screen */
+        border: solid black 1.5px; /* Solid border for the container */
+        
+        /* Space out paragraphs inside the container */
+        p {
+            padding: 0 30px;
+        }
+
+        h1 {
+            font-family: "Protest Guerrilla", sans-serif;
+            text-align: left; /* Left-align the heading */
+            font-size: 2rem;
+            margin: 50px; /* Add space around the heading */
+            
+            span {
+                font-size: 2.5em; /* Make text in the span huge */
+            }
+        }
+    }
+
+    .title {
+        p {
+            width: 50%; /* Paragraph takes half the space */
+            padding: 0 50px; /* Space on the sides */
+            margin: 0;
+            text-align: justify;
+        }
+
+        h1 {
+            font-family: "Protest Guerrilla", sans-serif;
+            text-align: left;
+            font-size: 2rem;
+            margin: 50px;
+            
+            span {
+                font-size: 2.5em; /* Big span text again */
+            }
+        }
+    }
+
+    article {
+        margin: 50px; /* Space around the article */
+        column-count: 3; /* 3 columns for text */
+        column-gap: 50px; /* Space between columns */
+        
+        h1 {
+            margin: 0; 
+        }
+
+        p {
+            padding: 0;
+            margin: 0; 
+            text-align: justify;
+        }
+    }
+
+    /* Albums grid layout */
+    .albums {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+        grid-template-rows: repeat(2, 1fr); /* 2 equal rows */
+        grid-template-areas: 
+            'featured-album featured-album album2 album3'
+            'featured-album featured-album album4 album5'; /* Where albums go */
+
+        .featured {
+            display: block; /* Featured album is on */
+        }
+
+        img {
+            width: 100%; /* Stretch images to fit the grid */
+            height: auto; /* Keep the image proportions intact */
+        }
+    }
+
+    .about {
+        display: flex;
+        flex-direction: row-reverse; /* Author's image on the right */
+        align-items: end;
+        justify-content: center;
+        margin: 30px;
+    }
+
+    .author-img {
+        margin: 0;
+        width: 200px;
+        height: 200px;
+        
+        img {
+            width: 100%;
+            height: 100%;
+            border-radius: 100%; /* Makes the profile circle */
+        }
+    }
+
+    .about-container {
+        width: 50vw; /* Half screen width */
+        margin: 30px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+                
+        h1 {
+            margin: 0;
+            padding: 0;
+        }
+
+        p {
+            margin: 0px;
+            padding: 0;
+            padding: 0 30px;
+            text-align: justify;
+        }
+    }   
+        
+    footer {
+        padding: 20px; 
+    }
+}
