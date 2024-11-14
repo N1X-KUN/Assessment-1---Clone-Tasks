@@ -1,2 +1,3 @@
-# Assessment-1---Clone-Tasks
-Contains two task of HTML and CSS for Assessment 1
+I have tried... there could have been ways to simply and shorten the code but because I don't start ahead of time, I panic code in last minute... 
+
+Within the folder includes Task 1 clone and Task 2 layout for my assessment 1, I did not comment on my Task 2
